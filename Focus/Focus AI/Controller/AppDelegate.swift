@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    Opens PauseVeiwController when Shortcut activates our app.
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         
-        var sourceApp = getSourceApp(from: url)
+        let sourceApp = getSourceApp(from: url)
         if url.scheme == "focus" && url.host() == "pause"
         {
             // Handle the URL

@@ -231,9 +231,9 @@ extension PauseViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var message = (indexPath.row % 2 == 0) ? aiMessage : userMessage 
+        let message = (indexPath.row % 2 == 0) ? aiMessage : userMessage 
         
-        var labelSize = calculateLabelSize(for: message, font: font, maxWidth: windowWidth - universalWidth(98))
+        let labelSize = calculateLabelSize(for: message, font: font, maxWidth: windowWidth - universalWidth(98))
         
         if indexPath.row % 2 == 0 {
             let cell = AIMessageCell(chatMessage: message, labelSize: labelSize, font: font)
@@ -250,8 +250,8 @@ extension PauseViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var message = (indexPath.row % 2 == 0) ? aiMessage : userMessage 
-        var labelSize = calculateLabelSize(for: message, font: font, maxWidth: windowWidth - universalWidth(98))
+        let message = (indexPath.row % 2 == 0) ? aiMessage : userMessage 
+        let labelSize = calculateLabelSize(for: message, font: font, maxWidth: windowWidth - universalWidth(98))
 //        if indexPath.row % 2 == 0 {
             guard labelSize.height > 52 else { return 65 }
             return labelSize.height + 45
