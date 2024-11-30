@@ -56,6 +56,7 @@ class AIMessageCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = font
         label.text = chatMessage
+        label.textColor = .black
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         return label

@@ -26,6 +26,9 @@
 		80DBD6882CFA3FEE00F988A7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBD6872CFA3FEE00F988A7 /* CustomTextField.swift */; };
 		80DBD68A2CFA7FB900F988A7 /* UserMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBD6892CFA7FB900F988A7 /* UserMessageCell.swift */; };
 		80DBD68C2CFA7FC900F988A7 /* AIMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBD68B2CFA7FC900F988A7 /* AIMessageCell.swift */; };
+		80DBD68E2CFB16C900F988A7 /* ChatMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBD68D2CFB16C900F988A7 /* ChatMessageModel.swift */; };
+		80DBD6902CFB37D100F988A7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBD68F2CFB37D100F988A7 /* UserModel.swift */; };
+		80DBD6922CFB821F00F988A7 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBD6912CFB821F00F988A7 /* Todo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		80DBD6872CFA3FEE00F988A7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		80DBD6892CFA7FB900F988A7 /* UserMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMessageCell.swift; sourceTree = "<group>"; };
 		80DBD68B2CFA7FC900F988A7 /* AIMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIMessageCell.swift; sourceTree = "<group>"; };
+		80DBD68D2CFB16C900F988A7 /* ChatMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageModel.swift; sourceTree = "<group>"; };
+		80DBD68F2CFB37D100F988A7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		80DBD6912CFB821F00F988A7 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,7 @@
 				80DBD65D2CF78DA700F988A7 /* Assets.xcassets */,
 				80DBD65F2CF78DA700F988A7 /* LaunchScreen.storyboard */,
 				80DBD6622CF78DA700F988A7 /* Info.plist */,
+				80DBD6912CFB821F00F988A7 /* Todo.swift */,
 			);
 			path = "Focus AI";
 			sourceTree = "<group>";
@@ -131,6 +138,8 @@
 				80DBD6742CF8E28200F988A7 /* APIKEYS.swift */,
 				80DBD67A2CF9BA2700F988A7 /* GlobalVariables.swift */,
 				80DBD67C2CF9D2C400F988A7 /* GlobalFunctions.swift */,
+				80DBD68D2CFB16C900F988A7 /* ChatMessageModel.swift */,
+				80DBD68F2CFB37D100F988A7 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,6 +246,7 @@
 				80DBD6592CF78DA600F988A7 /* OverviewViewController.swift in Sources */,
 				80DBD6692CF7903400F988A7 /* PauseIntent.swift in Sources */,
 				80DBD68A2CFA7FB900F988A7 /* UserMessageCell.swift in Sources */,
+				80DBD6922CFB821F00F988A7 /* Todo.swift in Sources */,
 				80DBD6712CF7B5A600F988A7 /* PauseViewController.swift in Sources */,
 				80DBD6852CF9FDAE00F988A7 /* AppAndWebSitesCell.swift in Sources */,
 				80DBD6792CF9BA0600F988A7 /* HuggingFaceService.swift in Sources */,
@@ -247,8 +257,10 @@
 				80DBD6732CF8877D00F988A7 /* PauseView.swift in Sources */,
 				80DBD6752CF8E28200F988A7 /* APIKEYS.swift in Sources */,
 				80DBD6552CF78DA600F988A7 /* AppDelegate.swift in Sources */,
+				80DBD6902CFB37D100F988A7 /* UserModel.swift in Sources */,
 				80DBD66F2CF7AE3800F988A7 /* OverviewView.swift in Sources */,
 				80DBD6882CFA3FEE00F988A7 /* CustomTextField.swift in Sources */,
+				80DBD68E2CFB16C900F988A7 /* ChatMessageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

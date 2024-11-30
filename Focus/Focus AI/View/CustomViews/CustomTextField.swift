@@ -12,6 +12,8 @@ class CustomTextField: UIView{
     var isKeyboardShown = false
         
     var onKeyboardTapped: ((Bool) -> Void)?
+    
+    var sentMessage: ((User) -> Void)?
         
     private lazy var mainBackground: UIView = {
         let view = UIView()
@@ -36,6 +38,17 @@ class CustomTextField: UIView{
         return view
     }()
     
+    lazy var sendButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = #colorLiteral(red: 0.1551917791, green: 0.7838412523, blue: 0.2506273389, alpha: 1)
+        button.layer.cornerRadius = 19
+        button.setImage(UIImage(systemName: "arrow.up"), for: .normal)
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        button.tintColor = .white
+        return button
+    }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,6 +59,7 @@ class CustomTextField: UIView{
         
         self.addSubview(mainBackground)
         mainBackground.addSubview(textFieldView)
+        mainBackground.addSubview(sendButton)
         
         NSLayoutConstraint.activate([
             mainBackground.topAnchor.constraint(equalTo: topAnchor),
@@ -56,7 +70,12 @@ class CustomTextField: UIView{
             textFieldView.topAnchor.constraint(equalTo: topAnchor),
             textFieldView.bottomAnchor.constraint(equalTo: bottomAnchor),
             textFieldView.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
-            textFieldView.rightAnchor.constraint(equalTo: rightAnchor, constant: -25),
+            textFieldView.rightAnchor.constraint(equalTo: rightAnchor, constant: -46),
+            
+            sendButton.topAnchor.constraint(equalTo: mainBackground.topAnchor, constant: 4),
+            sendButton.bottomAnchor.constraint(equalTo: mainBackground.bottomAnchor, constant: -4),
+            sendButton.rightAnchor.constraint(equalTo: mainBackground.rightAnchor, constant: -4),
+            sendButton.widthAnchor.constraint(equalToConstant: 38)
             
         ])
     }
@@ -70,4 +89,13 @@ class CustomTextField: UIView{
         isKeyboardShown = true
         onKeyboardTapped?(isKeyboardShown)
     }
+    
+    @objc func buttonTapped(){
+        if textFieldView.text != "" {
+            USER.addMessage(id: "1", sender: .user, content: (textFieldView.text ?? ""), messageType: .text)
+            sentMessage?(USER)
+            textFieldView.text = ""
+        }
+    }
 }
+

@@ -44,7 +44,7 @@ class UserMessageCell: UITableViewCell{
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = font
-        label.text = chatMessage
+        label.text = chatMessage ?? ""
         label.textColor = .white
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping

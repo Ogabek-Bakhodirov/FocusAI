@@ -8,15 +8,12 @@
 import UIKit
 
 class PauseViewController: UIViewController {
-    
     private let openAIService = OpenAIService()
     private let huggingFaceService = HuggingFaceService()
     private var isKeyboardShown = false
-    
-    var userMessage = "How to get UILabel size in swift. It needs for creating chat page. I should get UILabel's height and width and rely on this size program should create adaptive card for message."
-    var aiMessage = "private let openAIService = OpenAIService()private let huggingFaceService = HuggingFaceService()private var isKeyboardShown = false"
     var font = UIFont.systemFont(ofSize: 16)
     var maxWidth = windowWidth - universalWidth(98)
+    
         
     lazy var pauseViewTop: PauseView = {
         let view = PauseView()
@@ -54,6 +51,11 @@ class PauseViewController: UIViewController {
         view.onKeyboardTapped = { [weak self] tapped in
             self?.isKeyboardShown = tapped
             self?.textFieldUpWhenKeyboardOpened()
+        }
+        view.sentMessage = { [weak self] user in
+            self?.huggingFaceQA(question: user.conversationHistory.last?.content ?? "")
+            self?.tableView.reloadData()
+            print(user)
         }
         return view
     }()
@@ -184,20 +186,21 @@ extension PauseViewController {
         
         
         //MARK: - Hugging Face Service
-        
-        huggingFaceService.fetchResponse(for: "Can you help me to improve myself. Answer in uzbek langugae") { response in
+    }
+    
+    func huggingFaceQA(question: String){
+        huggingFaceService.fetchResponse(for: question) { response in
             if let response = response {
                 DispatchQueue.main.async {
-//                  self.mainBackgroundView.resposeFromAILabel.text = response
-                  print(response)
-               }
+                    USER.addMessage(id: "1", sender: .ai, content: response, messageType: .text)
+                    self.tableView.reloadData()
+                }
             } else {
                 print("Failed to get a response from the model.")
             }
         }
     }
 }
-
 
 
 //MARK: - YouTube Logic
@@ -227,37 +230,33 @@ extension PauseViewController{
 extension PauseViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return USER.conversationHistory.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let message = (indexPath.row % 2 == 0) ? aiMessage : userMessage 
-        
-        let labelSize = calculateLabelSize(for: message, font: font, maxWidth: windowWidth - universalWidth(98))
-        
-        if indexPath.row % 2 == 0 {
-            let cell = AIMessageCell(chatMessage: message, labelSize: labelSize, font: font)
+        let message = USER.conversationHistory[indexPath.row]
+        let labelSize = calculateLabelSize(for: message.content, font: font, maxWidth: windowWidth - universalWidth(98))
+        if message.sender == .ai {
+            let cell = AIMessageCell(chatMessage: message.content, labelSize: labelSize, font: font)
             cell.backgroundColor = .clear
             cell.selectionStyle = .none
             return cell
         } else {
-            let cell = UserMessageCell(chatMessage: message, labelSize: labelSize, font: font)
+            let cell = UserMessageCell(chatMessage: message.content, labelSize: labelSize, font: font)
             cell.backgroundColor = .clear
             cell.selectionStyle = .none
             return cell
         }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let message = (indexPath.row % 2 == 0) ? aiMessage : userMessage 
-        let labelSize = calculateLabelSize(for: message, font: font, maxWidth: windowWidth - universalWidth(98))
-//        if indexPath.row % 2 == 0 {
+        let message = USER.conversationHistory[indexPath.row]
+        let labelSize = calculateLabelSize(for: message.content, font: font, maxWidth: windowWidth - universalWidth(98))
+        if message.sender == .ai {
             guard labelSize.height > 52 else { return 65 }
             return labelSize.height + 45
-//        } else {
-//            guard labelSize.height > 52 else { return 65 }
-//            return labelSize.height + 45
-//        }
+        } else {
+            return labelSize.height + 45
+        } 
     }
 }
