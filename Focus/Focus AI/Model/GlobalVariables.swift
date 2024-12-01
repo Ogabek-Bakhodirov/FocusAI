@@ -14,6 +14,6 @@ let OPENAI_API_KEY = "sk-proj-XTswODJzCcMD-HJNIIQvmQaSMMGt3WP8Ryz6Maat9T3NmniaUJ
 let OPENAI_BASE_URL = "https://api.openai.com/v1/chat/completions"
 
 let HUGGING_FACE_API_KEY = "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"
-let HUGGING_FACE_BASE_URL = "https://api-inference.huggingface.co/models/gpt2"
+let HUGGING_FACE_BASE_URL = "https://api-inference.huggingface.co/models/Qwen/QwQ-32B-Preview" 
 
 

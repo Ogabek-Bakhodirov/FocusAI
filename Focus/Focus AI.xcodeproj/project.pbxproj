@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8014FE9B2CFC508E00675AEE /* FocusAIActivatorIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8014FE9A2CFC508E00675AEE /* FocusAIActivatorIntent.swift */; };
+		8014FE9F2CFC5ADB00675AEE /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8014FE9E2CFC5ADB00675AEE /* test.swift */; };
 		80DBD6552CF78DA600F988A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBD6542CF78DA600F988A7 /* AppDelegate.swift */; };
 		80DBD6592CF78DA600F988A7 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBD6582CF78DA600F988A7 /* OverviewViewController.swift */; };
 		80DBD65E2CF78DA700F988A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80DBD65D2CF78DA700F988A7 /* Assets.xcassets */; };
@@ -32,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8014FE9A2CFC508E00675AEE /* FocusAIActivatorIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusAIActivatorIntent.swift; sourceTree = "<group>"; };
+		8014FE9E2CFC5ADB00675AEE /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		8014FEA02CFC8A6400675AEE /* Focus AI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Focus AI.entitlements"; sourceTree = "<group>"; };
 		80DBD6512CF78DA600F988A7 /* Focus AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Focus AI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80DBD6542CF78DA600F988A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80DBD6582CF78DA600F988A7 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +74,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8014FE992CFC507000675AEE /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				8014FE9A2CFC508E00675AEE /* FocusAIActivatorIntent.swift */,
+				8014FE9E2CFC5ADB00675AEE /* test.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
 		80DBD6482CF78DA600F988A7 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +102,8 @@
 		80DBD6532CF78DA600F988A7 /* Focus AI */ = {
 			isa = PBXGroup;
 			children = (
+				8014FEA02CFC8A6400675AEE /* Focus AI.entitlements */,
+				8014FE992CFC507000675AEE /* Intents */,
 				80DBD67E2CF9D45900F988A7 /* Extensions */,
 				80DBD66D2CF7ADFC00F988A7 /* Model */,
 				80DBD66C2CF7ADE900F988A7 /* View */,
@@ -243,6 +259,7 @@
 			files = (
 				80DBD67D2CF9D2C400F988A7 /* GlobalFunctions.swift in Sources */,
 				80DBD6832CF9F8CB00F988A7 /* OverveiwTopCell.swift in Sources */,
+				8014FE9B2CFC508E00675AEE /* FocusAIActivatorIntent.swift in Sources */,
 				80DBD6592CF78DA600F988A7 /* OverviewViewController.swift in Sources */,
 				80DBD6692CF7903400F988A7 /* PauseIntent.swift in Sources */,
 				80DBD68A2CFA7FB900F988A7 /* UserMessageCell.swift in Sources */,
@@ -261,6 +278,7 @@
 				80DBD66F2CF7AE3800F988A7 /* OverviewView.swift in Sources */,
 				80DBD6882CFA3FEE00F988A7 /* CustomTextField.swift in Sources */,
 				80DBD68E2CFB16C900F988A7 /* ChatMessageModel.swift in Sources */,
+				8014FE9F2CFC5ADB00675AEE /* test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Focus AI/Focus AI.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 533986H32X;
@@ -425,6 +444,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Focus AI/Focus AI.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 533986H32X;

@@ -56,10 +56,13 @@ class PauseViewController: UIViewController {
             self?.huggingFaceQA(question: user.conversationHistory.last?.content ?? "")
             self?.tableView.reloadData()
             print(user)
+//            print("Open youteb")
+//            self?.openApp()
         }
         return view
     }()
 
+    
     
     lazy var openAppButton: UIButton = {
        let button = UIButton()
@@ -77,6 +80,15 @@ class PauseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSubviews()
+    }
+    
+    func openYoutube() {
+        if let youtube = URL(string: "youtube://") {
+            if UIApplication.shared.canOpenURL(youtube) {
+                // Instagram is installed, open the app
+                UIApplication.shared.open(youtube, options: [:], completionHandler: nil)
+            } 
+        }
     }
     
         
