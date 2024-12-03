@@ -22,6 +22,7 @@ class OverviewViewController: UIViewController {
        let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.addTarget(self, action: #selector(onClickPlus), for: .touchUpInside)
         button.tintColor = .black
         return button
     }()
@@ -67,6 +68,12 @@ class OverviewViewController: UIViewController {
             mainTabledView.rightAnchor.constraint(equalTo: view.rightAnchor),
             mainTabledView.leftAnchor.constraint(equalTo: view.leftAnchor)
         ])
+    }
+    
+    @objc func onClickPlus(){
+        let viewController = PauseViewController()
+        viewController.modalPresentationStyle = .fullScreen // Optional, if you want it to cover the whole screen
+        present(viewController, animated: true, completion: nil)
     }
 }
 

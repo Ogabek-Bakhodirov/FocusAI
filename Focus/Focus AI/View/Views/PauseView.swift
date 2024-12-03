@@ -9,6 +9,8 @@ import UIKit
 
 class PauseView: UIView{
     
+    var gotoappButtonClousure: ((Bool) -> Void)?
+    
     lazy var backArrowButton: UIButton = {
        let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -22,6 +24,7 @@ class PauseView: UIView{
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "ellipsis"), for: .normal)
         button.tintColor = .black
+        button.addTarget(self, action: #selector(gotoappButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -85,6 +88,10 @@ class PauseView: UIView{
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func gotoappButtonTapped(){
+        gotoappButtonClousure?(true)
     }
     
 }

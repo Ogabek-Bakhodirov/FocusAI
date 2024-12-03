@@ -18,6 +18,13 @@ class PauseViewController: UIViewController {
     lazy var pauseViewTop: PauseView = {
         let view = PauseView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.gotoappButtonClousure = { isTapped in
+            if isTapped{
+                if let selectedApp = URL(string: SELECTED_APP?.app_url ?? "")  {
+                    UIApplication.shared.open(selectedApp)
+                }
+            }
+        }
         return view 
     }()
     
