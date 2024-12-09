@@ -59,3 +59,6 @@ extension DataManager: AppEnum {
     
     static var typeDisplayRepresentation: TypeDisplayRepresentation = "DataManager"
 }
+
+
+ 

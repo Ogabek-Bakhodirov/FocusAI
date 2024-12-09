@@ -18,15 +18,26 @@ class PauseViewController: UIViewController {
     lazy var pauseViewTop: PauseView = {
         let view = PauseView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.gotoappButtonClousure = { isTapped in
-            if isTapped{
-                if let selectedApp = URL(string: SELECTED_APP?.app_url ?? "")  {
-                    UIApplication.shared.open(selectedApp)
-                }
+        view.gotoappButtonClousure = { 
+            if let selectedApp = URL(string: SELECTED_APP?.app_url ?? "")  {
+//                USER_DEFAULTS.set(false, forKey: "isFirstTimeOpeningApp")
+                UIApplication.shared.open(selectedApp) //, options: [:], completionHandler: nil
             }
+            print("App opener tapped -> ????")
         }
         return view 
     }()
+    
+    //                    
+    //                    
+    //                    print("tappef+++")
+    //                    UIApplication.shared.open(selectedApp, options: [:], completionHandler: nil) //, options: [:], completionHandler: nil
+    //                    if let appURL = URL(string: SELECTED_APP?.app_url ?? ""), UIApplication.shared.canOpenURL(appURL) {
+    //                        UIApplication.shared.open(appURL)
+    //                        print("//////")
+    //                    } else {
+    //                        print("URL noto‘g‘ri yoki mavjud emas")
+    //                    }
     
     
     lazy var mainBackgroundView: UIView = {

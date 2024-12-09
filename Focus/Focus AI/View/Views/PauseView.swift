@@ -9,7 +9,7 @@ import UIKit
 
 class PauseView: UIView{
     
-    var gotoappButtonClousure: ((Bool) -> Void)?
+    var gotoappButtonClousure: (() -> Void)?
     
     lazy var backArrowButton: UIButton = {
        let button = UIButton()
@@ -91,7 +91,7 @@ class PauseView: UIView{
     }
     
     @objc func gotoappButtonTapped(){
-        gotoappButtonClousure?(true)
+        gotoappButtonClousure?()
     }
     
 }

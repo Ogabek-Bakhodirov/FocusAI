@@ -9,6 +9,8 @@ import UIKit
 
 var SELECTED_APP: DataManager?
 
+let USER_DEFAULTS = UserDefaults.standard
+
 public let windowHeight = UIScreen.main.bounds.height
 public let windowWidth =  UIScreen.main.bounds.width
 

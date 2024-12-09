@@ -9,24 +9,6 @@
 import AppIntents
 import UIKit
 
-
-//struct FocusAIActivatorIntent: AppIntent, OpenIntent {
-//    static let title: LocalizedStringResource = "Focus AI Activator"
-//
-//    @Parameter(title: "App name must be SELECTED!")
-//    var target: TrailEntity
-//
-//    @MainActor
-//    func perform() async throws -> some IntentResult {
-////        UIApplication.shared.openURL(URL(filePath: "focus://pause"))
-//        
-//        return .result() 
-//    }
-//
-//    static var parameterSummary: some ParameterSummary {
-//        Summary("Open \( \.$target)")
-//    }
-//
 //    //MARK: - May be used for reopening app 
 ////    Userni Focus AI orqali appga yuborishda ishlatilishi mumkin
 ////    static let openAppWhenRun: Bool = true 
@@ -43,17 +25,28 @@ struct FocusAIActivatorIntent: AppIntent {
 //        Navigator.shared.openShelf(shelf)
         SELECTED_APP = data
         print(SELECTED_APP?.app_url)
+      
+       
+//        if USER_DEFAULTS.bool(forKey: "isFirstTimeOpeningApp") {
+//                print("Shortcut qayta faollashishi to‘xtatildi")
+//                USER_DEFAULTS.set(true, forKey: "isFirstTimeOpeningApp") // Belgini tozalash
+////                return .result()
+//        }
+//        print(USER_DEFAULTS.bool(forKey: "isFirstTimeOpeningApp"), "->////////")
+//        FocusAIActivatorIntent.openAppWhenRun =   false //USER_DEFAULTS.bool(forKey: "isFirstTimeOpeningApp") ??
+
+        
         return .result()
     }
 
     static var parameterSummary: some ParameterSummary {
         Summary("Tanlangan Ilova -> \(\.$data)")
     }
-
+    
     static var openAppWhenRun: Bool = true
 }
 
-//struct TrailEntity: AppEntity {
+//struct TrailEntity: AppEntity 
 //    
 //    var id: String{name}
 //     

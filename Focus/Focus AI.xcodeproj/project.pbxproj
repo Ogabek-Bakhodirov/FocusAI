@@ -10,6 +10,7 @@
 		8014FE9B2CFC508E00675AEE /* FocusAIActivatorIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8014FE9A2CFC508E00675AEE /* FocusAIActivatorIntent.swift */; };
 		8014FE9F2CFC5ADB00675AEE /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8014FE9E2CFC5ADB00675AEE /* test.swift */; };
 		8014FEA22CFFB16200675AEE /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8014FEA12CFFB16200675AEE /* DataManager.swift */; };
+		8014FEA42D073EFD00675AEE /* ScreenTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8014FEA32D073EFD00675AEE /* ScreenTimeController.swift */; };
 		80DBD6552CF78DA600F988A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBD6542CF78DA600F988A7 /* AppDelegate.swift */; };
 		80DBD6592CF78DA600F988A7 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBD6582CF78DA600F988A7 /* OverviewViewController.swift */; };
 		80DBD65E2CF78DA700F988A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80DBD65D2CF78DA700F988A7 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		8014FE9E2CFC5ADB00675AEE /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		8014FEA02CFC8A6400675AEE /* Focus AI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Focus AI.entitlements"; sourceTree = "<group>"; };
 		8014FEA12CFFB16200675AEE /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		8014FEA32D073EFD00675AEE /* ScreenTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeController.swift; sourceTree = "<group>"; };
 		80DBD6512CF78DA600F988A7 /* Focus AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Focus AI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80DBD6542CF78DA600F988A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80DBD6582CF78DA600F988A7 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				80DBD65F2CF78DA700F988A7 /* LaunchScreen.storyboard */,
 				80DBD6622CF78DA700F988A7 /* Info.plist */,
 				80DBD6912CFB821F00F988A7 /* Todo.swift */,
+				8014FEA32D073EFD00675AEE /* ScreenTimeController.swift */,
 			);
 			path = "Focus AI";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8014FEA42D073EFD00675AEE /* ScreenTimeController.swift in Sources */,
 				80DBD67D2CF9D2C400F988A7 /* GlobalFunctions.swift in Sources */,
 				80DBD6832CF9F8CB00F988A7 /* OverveiwTopCell.swift in Sources */,
 				8014FE9B2CFC508E00675AEE /* FocusAIActivatorIntent.swift in Sources */,
