@@ -19,10 +19,11 @@ class PauseViewController: UIViewController {
         let view = PauseView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.gotoappButtonClousure = { 
-            if let selectedApp = URL(string: SELECTED_APP?.app_url ?? "")  {
-//                USER_DEFAULTS.set(false, forKey: "isFirstTimeOpeningApp")
-                UIApplication.shared.open(selectedApp) //, options: [:], completionHandler: nil
-            }
+//            if let selectedApp = URL(string: SELECTED_APP?.app_url ?? "")  {
+////                USER_DEFAULTS.set(false, forKey: "isFirstTimeOpeningApp")
+//                UIApplication.shared.open(selectedApp) //, options: [:], completionHandler: nil
+//            }
+            UIApplication.shared.open(URL(string: "instagram://") ?? URL(fileURLWithPath: ""))
             print("App opener tapped -> ????")
         }
         return view 

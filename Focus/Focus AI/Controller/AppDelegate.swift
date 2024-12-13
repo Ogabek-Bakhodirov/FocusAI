@@ -28,8 +28,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         viewController.view.backgroundColor = .white
         window?.rootViewController = viewController 
         
+        
+//        Task {
+//            do {
+//                try await AppStateHandlerFunc()
+//            } catch {
+//                print("Intentni bajarishda xato: \(error.localizedDescription)")
+//            }
+//        }
+        
         return true
     }
+    
+    
+//    func applicationWillEnterForeground(_ application: UIApplication) {
+//        Task {
+//            do {
+//                try await AppStateHandlerFunc()
+//            } catch {
+//                print("Intentni bajarishda xato: \(error.localizedDescription)")
+//            }
+//        }
+//        
+//        print("applicationWillEnterForeground ------", separator: " \n", terminator: " \n")
+//    }
+    
+//    func applicationDidBecomeActive(_ application: UIApplication) {
+//        Task {
+//            do {
+//                try await AppStateHandlerFunc()
+//            } catch {
+//                print("Intentni bajarishda xato: \(error.localizedDescription)")
+//            }
+//        } // Example function call
+//        
+//        print("applicationWillEnterForeground -------", separator: " \n", terminator: " \n")
+//    }
+
     
     @objc private func handleOpenFocusAppURL() {
             DispatchQueue.main.async {
